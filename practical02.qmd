@@ -1,6 +1,6 @@
 ---
 title: "Getting started with R"
-author: Your name here
+author: Panagiotis Valsamis
 date: today
 format: html
 ---
@@ -11,6 +11,7 @@ format: html
 
 ```{r}
 # Your answer in code
+c("A","B","C")
 
 ```
 > Your answer as text
@@ -20,6 +21,7 @@ format: html
 * Assign the vector to a variable `my_letters`
 ```{r}
 # Your answer in code
+my_letters<-c("A","B","C")
 
 ```
 
@@ -27,6 +29,7 @@ format: html
 * Check the what happens when you run `letters` (just this) on the command line.
 ```{r}
 # Your answer in code
+letters
 
 ```
 
@@ -37,6 +40,7 @@ format: html
 * What happens when you concatenate two vectors? Add `c(my_letters , my_letters)`
 ```{r}
 # Your answer in code
+c(my_letters,my_letters)
 
 
 ```
@@ -48,6 +52,10 @@ format: html
 * Add the number 1 to letters. What happens to the type of the vector?
 ```{r}
 # Your answer in code
+typeof(my_letters)
+c(my_letters,1)
+typeof(my_letters)
+
 
 
 ```
@@ -65,8 +73,9 @@ format: html
 
 ```{r}
 # Your answer in code
-
-
+my_vec<-1:8
+my_vec+2
+my_vec+1:4
 
 
 
@@ -95,7 +104,14 @@ format: html
 
 ```{r}
 # Your answer in code
-
+x <-c(4,9,10)
+y <-c(1,5,7)
+A <-matrix(c(x,y),ncol=2)
+A
+print(A[2,2])
+A <-cbind(A,c(0,0,0))
+A[2,2] <-0
+t(A)
 
 
 
@@ -107,12 +123,26 @@ format: html
 8. Are any values in `A` larger than 10? 
 ```{r}
 # Your answer in code
+for(i in A) {
+    if(i>10)
+        print("YES")
+}
 
 ```
 
 9. Are all values in `A` smaller than 10?
 ```{r}
 # Your answer in code
+j=0
+for(i in A) {
+    if (i>10)
+        j<-j+1
+}
+
+if(j>=1){
+    print("no")
+} else
+    print("yes")
 
 ```
 
@@ -127,6 +157,7 @@ format: html
 
 
 
+
 ```
 
 
@@ -136,7 +167,12 @@ format: html
 
 ```{r}
 # Your answer in code
-
+summary_<-function(x){
+    x1<-mean(x)
+    x2<-median(x)
+    x3<-sd(x)
+    return(list(mean=x1,median=x2,sd=x3))
+}
 
 
 ```
@@ -148,6 +184,7 @@ The output of `c('1' , "a", NA, "2", NA)` should be 2.
 
 ```{r}
 # Your answer in code
+
 
 
 
