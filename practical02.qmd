@@ -152,6 +152,9 @@ if(j>=1){
 
 ```{r}
 # Your answer in code
+sum_values <- function(x,y){
+    return(x+y)
+}
 
 
 
@@ -184,6 +187,10 @@ The output of `c('1' , "a", NA, "2", NA)` should be 2.
 
 ```{r}
 # Your answer in code
+x <- c("1","a",NA,"2",NA)
+x |> 
+    is.na() |> 
+    sum()
 
 
 
